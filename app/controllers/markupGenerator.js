@@ -11,7 +11,7 @@ exports.handleFormData = async (req, res) => {
   // Create an array of promises for each profile ID request
   const requests = profileIds.map((profileId) =>
     //   /api/v2/va/
-    axios.get(`http://localhost:1337/api/v2/va/${profileId}`)
+    axios.get(`https://app-dev.wishup.co/api/v2/va/${profileId}`)
   );
 
   // Wait for all requests to complete
@@ -51,6 +51,6 @@ exports.handleFormData = async (req, res) => {
     .catch((error) => {
       // Handle any errors that occurred during the requests
       console.error("Error fetching profile data:", error);
-      res.sendStatus(500);
+      res.status(500).send("failed");
     });
 };

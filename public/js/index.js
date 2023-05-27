@@ -25,7 +25,7 @@ function sendDataToBackend(profileIds){
   const xhr = new XMLHttpRequest();
 
   // Set up the request
-  xhr.open('POST', 'http://localhost:3000/email-template-generator/form-data', true);
+  xhr.open('POST', 'https://email-template-generator.onrender.com/email-template-generator/form-data', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
 
   xhr.onload = function() {
@@ -42,6 +42,7 @@ function sendDataToBackend(profileIds){
     } else {
       // Error response
       console.error('API request failed');
+      alert("Failed try again - if persists Report")
     }
   };
 
