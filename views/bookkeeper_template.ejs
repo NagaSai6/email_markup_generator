@@ -7,7 +7,8 @@
     <title>Bookkeeper Email Template</title>
     <style>
       .image_banner {
-        width: 90%;
+        width: 100%;
+        height: 100px;
         text-align: center;
       }
       .bk_et_container {
@@ -31,6 +32,9 @@
       .bk_et_tasks_description {
         margin-top: 50px;
       }
+      .bk_et_text_highlight_ {
+        font-size: 1.2rem;
+      }
       .bk_et_text_highlight {
         margin-top: 30px;
         font-weight: 450;
@@ -39,7 +43,7 @@
       }
       .bk_et_eplore_button {
         text-decoration: none;
-        color: #fff;
+        color: #fff !important;
         background: #1466b8;
         padding: 20px;
         border-radius: 8px;
@@ -55,9 +59,181 @@
         padding: 10px;
         font-family: Arial, Helvetica, sans-serif;
       }
-      .bk_et_footer_first_p{
+      .bk_et_footer_first_p {
         line-height: 1.4;
       }
+      /* cards styles starts */
+
+      .home-vitual-box-img {
+        width: 100%;
+        text-align: center;
+        height: 168px;
+        background-size: auto 100% !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom !important;
+      }
+      .card_image_container {
+        position: relative;
+        overflow: hidden;
+        background: rgb(161, 234, 199);
+        display: grid;
+        /* width: 100%; */
+
+        text-align: center;
+        height: 168px;
+        background-size: auto 100% !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom !important;
+      }
+      .card_background_shade {
+        background: linear-gradient(
+          230.83deg,
+          rgb(211, 255, 234) 20.4%,
+          rgba(211, 255, 234, 0) 77.77%
+        );
+      }
+      .card-background-shade {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        left: 61px;
+        top: -25px;
+        border-radius: 50%;
+      }
+      .another_card_vbox_img {
+        position: absolute !important;
+        height: 100% !important;
+        width: 100% !important;
+        background: linear-gradient(
+          0deg,
+          rgba(11, 10, 10, 0.15) 0%,
+          rgba(216, 152, 176, 0) 89.65%
+        ) !important;
+      }
+      .profile_image {
+        height: 180px !important;
+        width: 180px !important;
+        position: absolute !important;
+        left: 30% !important;
+      }
+      .card_body {
+        padding: 24px 16px !important ;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+      .card_desc_container {
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        align-items: center;
+      }
+      .cards_hours {
+        display: flex;
+        margin: 0;
+        gap: 0;
+      }
+      .cardhours_desc{
+        margin-left: 3px;
+        margin-top: 12px;
+      }
+      .card_skills_container {
+        padding: 1rem;
+        background-color: white;
+        text-align: start;
+        padding-top: 0;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      .home-vitual-box-tag-cover {
+        overflow: scroll;
+        padding: 0;
+        margin: 0;
+        margin-top: 1rem;
+        width: 100%;
+        display: inline-block;
+        height: 70px;
+      }
+      .home-vitual-box-tag {
+        font-size: 13px;
+        line-height: 21px;
+        font-weight: 300;
+        color: #666;
+        border: 1px solid #e6e6e6;
+        box-sizing: border-box;
+        border-radius: 2px;
+        padding: 4px 5px;
+        margin-right: 8px;
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+      .card_button {
+        background: #0d6efd;
+        color: #fff !important;
+        font-size: 19px;
+        border-color: #0d6efd;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 7px 20px;
+        border: 1px solid;
+        min-width: 149px;
+        border-radius: 6px;
+        margin-top: 10px;
+        height: 36px;
+        min-height: initial;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .baner-thumbnail-box {
+        width: 300px !important;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        padding: 0 5px;
+        margin-left: 5px;
+        display: table-cell;
+        margin-right: 10px;
+      }
+
+      .cards_global_container {
+        display: table;
+        width: 700px;
+        table-layout: fixed;
+        margin: 10px auto;
+        border-radius: 16px;
+      }
+      @media screen and (max-width: 767px) {
+        .cards_global_container {
+          display: block !important;
+          width: 100% !important ;
+        }
+        .baner-thumbnail-box {
+          display: block;
+          margin: 10px auto;
+
+          width: auto !important;
+        }
+        .bk_et_eplore_button {
+          width: auto !important ;
+          font-size: 13px !important;
+        }
+        .bk_et_text_highlight {
+          font-size: 12px !important;
+        }
+        .bk_et_text_highlight_ {
+          font-size: 12px !important;
+        }
+        .image_banner {
+          height: auto !important;
+        }
+        .home-vitual-box-tag {
+          line-height: 10px !important;
+        }
+      }
+
+      /* cards styles ends */
     </style>
   </head>
   <body>
@@ -70,12 +246,12 @@
         />
       </a>
       <div class="bk_et_text_container">
-        <h4>Dear Entrepreneur,</h4>
-        <p>
+        <h2>Dear Entrepreneur,</h2>
+        <p class="bk_et_text_highlight_">
           <span class="bk_et_text_icon">&#129300;</span>Are you buried under
           mountains of receipts?
         </p>
-        <p>
+        <p class="bk_et_text_highlight_">
           <span class="bk_et_text_icon">&#129300;</span>Does the mere mention of
           <b>balance sheets</b> or <b>cash flows</b> give you a headache?
         </p>
@@ -85,6 +261,352 @@
             Well, we've got just the perfect cost-effective remedy for you!
           </span>
         </p>
+      </div>
+      <div class="cards_global_container">
+        <div class="baner-thumbnail-box">
+          <div class="home-vitual-box-img card_image_container">
+            <div class="card-background-shade card_background_shade"></div>
+
+            <div class="home-vitual-box-img another_card_vbox_img"></div>
+            <img
+              class="home-vitual-box-img profile_image"
+              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
+              alt=""
+              srcset=""
+            />
+          </div>
+
+          <div class="card_body">
+            <table style="width: 100%; border-collapse: collapse">
+              <tr>
+                <td style="width: 100%">
+                  <table style="width: 100%; border-collapse: collapse">
+                    <tr>
+                      <td style="display: flex">
+                        <p style="font-size: 18px; font-weight: 800; margin: 0">
+                          Pra***
+                        </p>
+                        <img
+                          height="16"
+                          alt=""
+                          aria-hidden="true"
+                          src="https://flagcdn.com/h20/in.png"
+                          style="
+                            border-radius: 2px;
+                            margin-top: 4px;
+                            margin-left: 6px;
+                            width: 24px;
+                          "
+                        />
+                        <span
+                          class=""
+                          style="margin-left: 8px; margin-top: 3px"
+                        >
+                          <span style="color: rgb(53, 177, 90)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                        </span>
+                      </td>
+                      <td style="text-align: right">
+                        <p class="cards_hours">
+                          <span
+                            style="
+                              font-size: 28px;
+                              font-weight: 700;
+                              color: rgb(0, 95, 190);
+                              line-height: 28px;
+                            "
+                            >8</span
+                          >
+
+                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <p class="card_desc_container">
+                          <span
+                            style="
+                              font-size: 14px;
+                              font-weight: 400;
+                              text-transform: capitalize;
+                              color: rgb(122, 134, 154);
+                              margin: 0;
+                            "
+                            >virtual assistant</span
+                          >
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card_skills_container">
+            <div
+              style="width: 100%; height: 1px; background: rgb(228, 228, 228)"
+            ></div>
+
+            <div class="home-vitual-box-tag-cover">
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Content Writing
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >SEO
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Graphic Designing
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Problem solving
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >speed cuber
+              </span>
+            </div>
+            <a
+              href="/hire/82506/profile?through_cta=true"
+              class="card_button"
+              style="
+                line-height: 34px;
+                height: 36px;
+                border: 1px solid;
+                min-height: initial;
+              "
+            >
+              <span style="font-size: 16px; font-weight: 500"
+                >View Profile
+              </span></a
+            >
+          </div>
+        </div>
+        <div class="baner-thumbnail-box">
+          <div class="home-vitual-box-img card_image_container">
+            <div class="card-background-shade card_background_shade"></div>
+
+            <div class="home-vitual-box-img another_card_vbox_img"></div>
+            <img
+              class="home-vitual-box-img profile_image"
+              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
+              alt=""
+              srcset=""
+            />
+          </div>
+
+          <div class="card_body">
+            <table style="width: 100%; border-collapse: collapse">
+              <tr>
+                <td style="width: 100%">
+                  <table style="width: 100%; border-collapse: collapse">
+                    <tr>
+                      <td style="display: flex">
+                        <p style="font-size: 18px; font-weight: 800; margin: 0">
+                          Pra***
+                        </p>
+                        <img
+                          height="16"
+                          alt=""
+                          aria-hidden="true"
+                          src="https://flagcdn.com/h20/in.png"
+                          style="
+                            border-radius: 2px;
+                            margin-top: 4px;
+                            margin-left: 6px;
+                            width: 24px;
+                          "
+                        />
+                        <span
+                          class=""
+                          style="margin-left: 8px; margin-top: 3px"
+                        >
+                          <span style="color: rgb(53, 177, 90)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                        </span>
+                      </td>
+                      <td style="text-align: right">
+                        <p class="cards_hours">
+                          <span
+                            style="
+                              font-size: 28px;
+                              font-weight: 700;
+                              color: rgb(0, 95, 190);
+                              line-height: 28px;
+                            "
+                            >8</span
+                          >
+
+                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <p class="card_desc_container">
+                          <span
+                            style="
+                              font-size: 14px;
+                              font-weight: 400;
+                              text-transform: capitalize;
+                              color: rgb(122, 134, 154);
+                              margin: 0;
+                            "
+                            >virtual assistant</span
+                          >
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card_skills_container">
+            <div
+              style="width: 100%; height: 1px; background: rgb(228, 228, 228)"
+            ></div>
+
+            <div class="home-vitual-box-tag-cover">
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Content Writing
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >SEO
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Graphic Designing
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Problem solving
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >speed cuber
+              </span>
+            </div>
+            <a
+              href="/hire/82506/profile?through_cta=true"
+              class="card_button"
+              style="
+                line-height: 34px;
+                height: 36px;
+                border: 1px solid;
+                min-height: initial;
+              "
+            >
+              <span style="font-size: 16px; font-weight: 500"
+                >View Profile
+              </span></a
+            >
+          </div>
+        </div>
       </div>
       <a
         class="bk_et_eplore_button"
@@ -125,6 +647,352 @@
       </div>
 
       <!-- view new profiles button -->
+      <div class="cards_global_container">
+        <div class="baner-thumbnail-box">
+          <div class="home-vitual-box-img card_image_container">
+            <div class="card-background-shade card_background_shade"></div>
+
+            <div class="home-vitual-box-img another_card_vbox_img"></div>
+            <img
+              class="home-vitual-box-img profile_image"
+              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
+              alt=""
+              srcset=""
+            />
+          </div>
+
+          <div class="card_body">
+            <table style="width: 100%; border-collapse: collapse">
+              <tr>
+                <td style="width: 100%">
+                  <table style="width: 100%; border-collapse: collapse">
+                    <tr>
+                      <td style="display: flex">
+                        <p style="font-size: 18px; font-weight: 800; margin: 0">
+                          Pra***
+                        </p>
+                        <img
+                          height="16"
+                          alt=""
+                          aria-hidden="true"
+                          src="https://flagcdn.com/h20/in.png"
+                          style="
+                            border-radius: 2px;
+                            margin-top: 4px;
+                            margin-left: 6px;
+                            width: 24px;
+                          "
+                        />
+                        <span
+                          class=""
+                          style="margin-left: 8px; margin-top: 3px"
+                        >
+                          <span style="color: rgb(53, 177, 90)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                        </span>
+                      </td>
+                      <td style="text-align: right">
+                        <p class="cards_hours">
+                          <span
+                            style="
+                              font-size: 28px;
+                              font-weight: 700;
+                              color: rgb(0, 95, 190);
+                              line-height: 28px;
+                            "
+                            >8</span
+                          >
+
+                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <p class="card_desc_container">
+                          <span
+                            style="
+                              font-size: 14px;
+                              font-weight: 400;
+                              text-transform: capitalize;
+                              color: rgb(122, 134, 154);
+                              margin: 0;
+                            "
+                            >virtual assistant</span
+                          >
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card_skills_container">
+            <div
+              style="width: 100%; height: 1px; background: rgb(228, 228, 228)"
+            ></div>
+
+            <div class="home-vitual-box-tag-cover">
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Content Writing
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >SEO
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Graphic Designing
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Problem solving
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >speed cuber
+              </span>
+            </div>
+            <a
+              href="/hire/82506/profile?through_cta=true"
+              class="card_button"
+              style="
+                line-height: 34px;
+                height: 36px;
+                border: 1px solid;
+                min-height: initial;
+              "
+            >
+              <span style="font-size: 16px; font-weight: 500"
+                >View Profile
+              </span></a
+            >
+          </div>
+        </div>
+        <div class="baner-thumbnail-box">
+          <div class="home-vitual-box-img card_image_container">
+            <div class="card-background-shade card_background_shade"></div>
+
+            <div class="home-vitual-box-img another_card_vbox_img"></div>
+            <img
+              class="home-vitual-box-img profile_image"
+              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
+              alt=""
+              srcset=""
+            />
+          </div>
+
+          <div class="card_body">
+            <table style="width: 100%; border-collapse: collapse">
+              <tr>
+                <td style="width: 100%">
+                  <table style="width: 100%; border-collapse: collapse">
+                    <tr>
+                      <td style="display: flex">
+                        <p style="font-size: 18px; font-weight: 800; margin: 0">
+                          Pra***
+                        </p>
+                        <img
+                          height="16"
+                          alt=""
+                          aria-hidden="true"
+                          src="https://flagcdn.com/h20/in.png"
+                          style="
+                            border-radius: 2px;
+                            margin-top: 4px;
+                            margin-left: 6px;
+                            width: 24px;
+                          "
+                        />
+                        <span
+                          class=""
+                          style="margin-left: 8px; margin-top: 3px"
+                        >
+                          <span style="color: rgb(53, 177, 90)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                          <span style="color: rgb(163, 170, 180)">$</span>
+                        </span>
+                      </td>
+                      <td style="text-align: right">
+                        <p class="cards_hours">
+                          <span
+                            style="
+                              font-size: 28px;
+                              font-weight: 700;
+                              color: rgb(0, 95, 190);
+                              line-height: 28px;
+                            "
+                            >8</span
+                          >
+
+                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <p class="card_desc_container">
+                          <span
+                            style="
+                              font-size: 14px;
+                              font-weight: 400;
+                              text-transform: capitalize;
+                              color: rgb(122, 134, 154);
+                              margin: 0;
+                            "
+                            >virtual assistant</span
+                          >
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card_skills_container">
+            <div
+              style="width: 100%; height: 1px; background: rgb(228, 228, 228)"
+            ></div>
+
+            <div class="home-vitual-box-tag-cover">
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Content Writing
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >SEO
+              </span>
+
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Graphic Designing
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >Problem solving
+              </span>
+              <span
+                class="home-vitual-box-tag"
+                style="
+                  font-size: 12px;
+                  font-weight: 500;
+                  background: rgb(249, 250, 251);
+                  border-radius: 4px;
+                  color: rgb(92, 104, 124);
+                  padding: 4px 8px;
+                  height: 31px;
+                "
+                >speed cuber
+              </span>
+            </div>
+            <a
+              href="/hire/82506/profile?through_cta=true"
+              class="card_button"
+              style="
+                line-height: 34px;
+                height: 36px;
+                border: 1px solid;
+                min-height: initial;
+              "
+            >
+              <span style="font-size: 16px; font-weight: 500"
+                >View Profile
+              </span></a
+            >
+          </div>
+        </div>
+      </div>
       <a
         class="bk_et_eplore_button"
         href="https://www.wishup.co/hire"
