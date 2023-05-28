@@ -113,8 +113,7 @@
       .profile_image {
         height: 180px !important;
         width: 180px !important;
-        position: absolute !important;
-        left: 30% !important;
+        margin-top: 20px;
       }
       .card_body {
         padding: 24px 16px !important ;
@@ -132,7 +131,7 @@
         margin: 0;
         gap: 0;
       }
-      .cardhours_desc{
+      .cardhours_desc {
         margin-left: 3px;
         margin-top: 12px;
       }
@@ -263,17 +262,25 @@
         </p>
       </div>
       <div class="cards_global_container">
+        <% firstFoldVAData.length && firstFoldVAData.forEach((item)=>{ %>
         <div class="baner-thumbnail-box">
-          <div class="home-vitual-box-img card_image_container">
-            <div class="card-background-shade card_background_shade"></div>
-
-            <div class="home-vitual-box-img another_card_vbox_img"></div>
-            <img
-              class="home-vitual-box-img profile_image"
-              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
-              alt=""
-              srcset=""
-            />
+          <div
+            class="home-vitual-box-img card_image_container"
+            style="background: <%= item.card_background_color%>"
+          >
+            <div
+              class="card-background-shade card_background_shade"
+              style="background: <%= item.card_background_gradient %>"
+            >
+              <img
+                class="home-vitual-box-img profile_image"
+                height="180"
+                width="180"
+                src="<%= item.bg_image %>"
+                alt="va_profile_image"
+                title="VA profile image served from our server"
+              />
+            </div>
           </div>
 
           <div class="card_body">
@@ -284,13 +291,13 @@
                     <tr>
                       <td style="display: flex">
                         <p style="font-size: 18px; font-weight: 800; margin: 0">
-                          Pra***
+                          <%= item.name %>
                         </p>
                         <img
                           height="16"
                           alt=""
                           aria-hidden="true"
-                          src="https://flagcdn.com/h20/in.png"
+                          src="<%= item.country_flag_url %>"
                           style="
                             border-radius: 2px;
                             margin-top: 4px;
@@ -302,9 +309,10 @@
                           class=""
                           style="margin-left: 8px; margin-top: 3px"
                         >
-                          <span style="color: rgb(53, 177, 90)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
+                          <% item.dollar_signs.forEach((d)=>{ %>
+                          <span style="color: <%= d.color %>">$</span>
+
+                          <% }) %>
                         </span>
                       </td>
                       <td style="text-align: right">
@@ -316,10 +324,12 @@
                               color: rgb(0, 95, 190);
                               line-height: 28px;
                             "
-                            >8</span
+                            ><%= item.available_hours%></span
                           >
 
-                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
+                          <sub style="font-size: 11px" class="cardhours_desc"
+                            >hrs/day</sub
+                          >
                         </p>
                       </td>
                     </tr>
@@ -334,7 +344,7 @@
                               color: rgb(122, 134, 154);
                               margin: 0;
                             "
-                            >virtual assistant</span
+                            ><%= item.job_name %></span
                           >
                         </p>
                       </td>
@@ -351,6 +361,7 @@
             ></div>
 
             <div class="home-vitual-box-tag-cover">
+              <% item.skills.length && item.skills.forEach((skill)=>{ %>
               <span
                 class="home-vitual-box-tag"
                 style="
@@ -362,65 +373,13 @@
                   padding: 4px 8px;
                   height: 31px;
                 "
-                >Content Writing
+                ><%= skill.name %>
               </span>
 
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >SEO
-              </span>
-
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Graphic Designing
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Problem solving
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >speed cuber
-              </span>
+              <% }) %>
             </div>
             <a
-              href="/hire/82506/profile?through_cta=true"
+              href="https://www.wishup.co/hire/<%= item.id %>/profile"
               class="card_button"
               style="
                 line-height: 34px;
@@ -435,178 +394,8 @@
             >
           </div>
         </div>
-        <div class="baner-thumbnail-box">
-          <div class="home-vitual-box-img card_image_container">
-            <div class="card-background-shade card_background_shade"></div>
 
-            <div class="home-vitual-box-img another_card_vbox_img"></div>
-            <img
-              class="home-vitual-box-img profile_image"
-              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
-              alt=""
-              srcset=""
-            />
-          </div>
-
-          <div class="card_body">
-            <table style="width: 100%; border-collapse: collapse">
-              <tr>
-                <td style="width: 100%">
-                  <table style="width: 100%; border-collapse: collapse">
-                    <tr>
-                      <td style="display: flex">
-                        <p style="font-size: 18px; font-weight: 800; margin: 0">
-                          Pra***
-                        </p>
-                        <img
-                          height="16"
-                          alt=""
-                          aria-hidden="true"
-                          src="https://flagcdn.com/h20/in.png"
-                          style="
-                            border-radius: 2px;
-                            margin-top: 4px;
-                            margin-left: 6px;
-                            width: 24px;
-                          "
-                        />
-                        <span
-                          class=""
-                          style="margin-left: 8px; margin-top: 3px"
-                        >
-                          <span style="color: rgb(53, 177, 90)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
-                        </span>
-                      </td>
-                      <td style="text-align: right">
-                        <p class="cards_hours">
-                          <span
-                            style="
-                              font-size: 28px;
-                              font-weight: 700;
-                              color: rgb(0, 95, 190);
-                              line-height: 28px;
-                            "
-                            >8</span
-                          >
-
-                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <p class="card_desc_container">
-                          <span
-                            style="
-                              font-size: 14px;
-                              font-weight: 400;
-                              text-transform: capitalize;
-                              color: rgb(122, 134, 154);
-                              margin: 0;
-                            "
-                            >virtual assistant</span
-                          >
-                        </p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </div>
-
-          <div class="card_skills_container">
-            <div
-              style="width: 100%; height: 1px; background: rgb(228, 228, 228)"
-            ></div>
-
-            <div class="home-vitual-box-tag-cover">
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Content Writing
-              </span>
-
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >SEO
-              </span>
-
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Graphic Designing
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Problem solving
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >speed cuber
-              </span>
-            </div>
-            <a
-              href="/hire/82506/profile?through_cta=true"
-              class="card_button"
-              style="
-                line-height: 34px;
-                height: 36px;
-                border: 1px solid;
-                min-height: initial;
-              "
-            >
-              <span style="font-size: 16px; font-weight: 500"
-                >View Profile
-              </span></a
-            >
-          </div>
-        </div>
+        <% }) %>
       </div>
       <a
         class="bk_et_eplore_button"
@@ -648,17 +437,25 @@
 
       <!-- view new profiles button -->
       <div class="cards_global_container">
+        <% secondFoldVAData.length && secondFoldVAData.forEach((item)=>{ %>
         <div class="baner-thumbnail-box">
-          <div class="home-vitual-box-img card_image_container">
-            <div class="card-background-shade card_background_shade"></div>
-
-            <div class="home-vitual-box-img another_card_vbox_img"></div>
-            <img
-              class="home-vitual-box-img profile_image"
-              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
-              alt=""
-              srcset=""
-            />
+          <div
+            class="home-vitual-box-img card_image_container"
+            style="background: <%= item.card_background_color%>"
+          >
+            <div
+              class="card-background-shade card_background_shade"
+              style="background: <%= item.card_background_gradient %>"
+            >
+              <img
+                class="home-vitual-box-img profile_image"
+                src="<%= item.bg_image %>"
+                height="180"
+                width="180"
+                alt="va_profile_image"
+                title="VA profile image served from our server"
+              />
+            </div>
           </div>
 
           <div class="card_body">
@@ -669,13 +466,13 @@
                     <tr>
                       <td style="display: flex">
                         <p style="font-size: 18px; font-weight: 800; margin: 0">
-                          Pra***
+                          <%= item.name %>
                         </p>
                         <img
                           height="16"
                           alt=""
                           aria-hidden="true"
-                          src="https://flagcdn.com/h20/in.png"
+                          src="<%= item.country_flag_url %>"
                           style="
                             border-radius: 2px;
                             margin-top: 4px;
@@ -687,9 +484,10 @@
                           class=""
                           style="margin-left: 8px; margin-top: 3px"
                         >
-                          <span style="color: rgb(53, 177, 90)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
+                          <% item.dollar_signs.forEach((d)=>{ %>
+                          <span style="color: <%= d.color %>">$</span>
+
+                          <% }) %>
                         </span>
                       </td>
                       <td style="text-align: right">
@@ -701,10 +499,12 @@
                               color: rgb(0, 95, 190);
                               line-height: 28px;
                             "
-                            >8</span
+                            ><%= item.available_hours%></span
                           >
 
-                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
+                          <sub style="font-size: 11px" class="cardhours_desc"
+                            >hrs/day</sub
+                          >
                         </p>
                       </td>
                     </tr>
@@ -719,7 +519,7 @@
                               color: rgb(122, 134, 154);
                               margin: 0;
                             "
-                            >virtual assistant</span
+                            ><%= item.job_name %></span
                           >
                         </p>
                       </td>
@@ -736,6 +536,7 @@
             ></div>
 
             <div class="home-vitual-box-tag-cover">
+              <% item.skills.length && item.skills.forEach((skill)=>{ %>
               <span
                 class="home-vitual-box-tag"
                 style="
@@ -747,65 +548,13 @@
                   padding: 4px 8px;
                   height: 31px;
                 "
-                >Content Writing
+                ><%= skill.name %>
               </span>
 
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >SEO
-              </span>
-
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Graphic Designing
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Problem solving
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >speed cuber
-              </span>
+              <% }) %>
             </div>
             <a
-              href="/hire/82506/profile?through_cta=true"
+              href="https://www.wishup.co/hire/<%= item.id %>/profile"
               class="card_button"
               style="
                 line-height: 34px;
@@ -820,178 +569,8 @@
             >
           </div>
         </div>
-        <div class="baner-thumbnail-box">
-          <div class="home-vitual-box-img card_image_container">
-            <div class="card-background-shade card_background_shade"></div>
 
-            <div class="home-vitual-box-img another_card_vbox_img"></div>
-            <img
-              class="home-vitual-box-img profile_image"
-              src="https://app.wishup.co/documents/display_pics/82506_removed_bg"
-              alt=""
-              srcset=""
-            />
-          </div>
-
-          <div class="card_body">
-            <table style="width: 100%; border-collapse: collapse">
-              <tr>
-                <td style="width: 100%">
-                  <table style="width: 100%; border-collapse: collapse">
-                    <tr>
-                      <td style="display: flex">
-                        <p style="font-size: 18px; font-weight: 800; margin: 0">
-                          Pra***
-                        </p>
-                        <img
-                          height="16"
-                          alt=""
-                          aria-hidden="true"
-                          src="https://flagcdn.com/h20/in.png"
-                          style="
-                            border-radius: 2px;
-                            margin-top: 4px;
-                            margin-left: 6px;
-                            width: 24px;
-                          "
-                        />
-                        <span
-                          class=""
-                          style="margin-left: 8px; margin-top: 3px"
-                        >
-                          <span style="color: rgb(53, 177, 90)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
-                          <span style="color: rgb(163, 170, 180)">$</span>
-                        </span>
-                      </td>
-                      <td style="text-align: right">
-                        <p class="cards_hours">
-                          <span
-                            style="
-                              font-size: 28px;
-                              font-weight: 700;
-                              color: rgb(0, 95, 190);
-                              line-height: 28px;
-                            "
-                            >8</span
-                          >
-
-                          <sub style="font-size: 11px" class="cardhours_desc">hrs/day</sub>
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <p class="card_desc_container">
-                          <span
-                            style="
-                              font-size: 14px;
-                              font-weight: 400;
-                              text-transform: capitalize;
-                              color: rgb(122, 134, 154);
-                              margin: 0;
-                            "
-                            >virtual assistant</span
-                          >
-                        </p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </div>
-
-          <div class="card_skills_container">
-            <div
-              style="width: 100%; height: 1px; background: rgb(228, 228, 228)"
-            ></div>
-
-            <div class="home-vitual-box-tag-cover">
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Content Writing
-              </span>
-
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >SEO
-              </span>
-
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Graphic Designing
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >Problem solving
-              </span>
-              <span
-                class="home-vitual-box-tag"
-                style="
-                  font-size: 12px;
-                  font-weight: 500;
-                  background: rgb(249, 250, 251);
-                  border-radius: 4px;
-                  color: rgb(92, 104, 124);
-                  padding: 4px 8px;
-                  height: 31px;
-                "
-                >speed cuber
-              </span>
-            </div>
-            <a
-              href="/hire/82506/profile?through_cta=true"
-              class="card_button"
-              style="
-                line-height: 34px;
-                height: 36px;
-                border: 1px solid;
-                min-height: initial;
-              "
-            >
-              <span style="font-size: 16px; font-weight: 500"
-                >View Profile
-              </span></a
-            >
-          </div>
-        </div>
+        <% }) %>
       </div>
       <a
         class="bk_et_eplore_button"

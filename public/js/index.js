@@ -1,6 +1,11 @@
 const form = document.getElementById('client_form');
 
 form.addEventListener('submit', function(event) {
+  const myTextArea = document.getElementById('html_code');
+  const copyButton = document.getElementById('copyButton');
+  copyButton.innerText = "Copy";
+  copyButton.style.display = 'none';
+  myTextArea.style.display = 'none';
   event.preventDefault(); // Prevent form submission
 
   // Retrieve input values

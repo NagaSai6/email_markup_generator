@@ -11,30 +11,27 @@
 </head>
 <body>
 
+
     <div class="client_form_container">
+      <h1>Email Template Generator</h1>
+      <p style="color:red ;">Only active va ids *</p>
         <form id="client_form">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Bookkeeper Template
-                </label>
-              </div>
-              <label for="basic-url" class="form-label">VA profile Ids ( atleast one id is needed ) </label>
+              <label for="basic-url" class="form-label">VA profile Ids ( atleast 2 ids are needed ) </label>
               <div class="input-group flex-nowrap mb-3">
                 <span class="input-group-text" id="addon-wrapping">ID - 1</span>
-                <input type="text" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping" required>
+                <input type="number" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping" required>
               </div>
               <div class="input-group flex-nowrap mb-3">
                 <span class="input-group-text" id="addon-wrapping">ID - 2</span>
-                <input type="text" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping">
+                <input type="number" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping" required>
               </div>
               <div class="input-group flex-nowrap mb-3">
                 <span class="input-group-text" id="addon-wrapping">ID - 3</span>
-                <input type="text" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping">
+                <input type="number" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping">
               </div>
               <div class="input-group flex-nowrap mb-3">
                 <span class="input-group-text" id="addon-wrapping">ID - 4</span>
-                <input type="text" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping">
+                <input type="number" class="form-control" placeholder="profile id" aria-label="profile id" aria-describedby="addon-wrapping">
               </div>
             <button type="submit" class="btn btn-primary">Generate</button>
           </form>
