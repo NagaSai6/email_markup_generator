@@ -39,7 +39,7 @@ exports.handleFormData = async (req, res) => {
         } else {
           // Set the Content-Type header to specify that the response is HTML
           res.setHeader("Content-Type", "text/html");
-          // let compressedHTML = minify(renderedHTML,{minifyCSS : true,removeComments:true,collapseWhitespace: true});
+          let compressedHTML = minify(renderedHTML,{minifyCSS : true,removeComments:true,collapseWhitespace: true});
           // function convertHTMLToDisplayText(htmlString) {
           //   let encodedString = htmlString.replace(/&/g, '&amp;');
           //   encodedString = encodedString.replace(/</g, '&lt;');
@@ -48,7 +48,7 @@ exports.handleFormData = async (req, res) => {
           //   return encodedString
           // }
           // compressedHTML = convertHTMLToDisplayText(compressedHTML)
-          return res.send (renderedHTML);
+          return res.send (compressedHTML);
         }
       });
 

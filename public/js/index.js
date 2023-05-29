@@ -3,6 +3,8 @@ const form = document.getElementById('client_form');
 form.addEventListener('submit', function(event) {
   const myTextArea = document.getElementById('html_code');
   const copyButton = document.getElementById('copyButton');
+  const generateButton = document.getElementById('generate_button');
+  generateButton.innerText = 'Generating..';
   copyButton.innerText = "Copy";
   copyButton.style.display = 'none';
   myTextArea.style.display = 'none';
@@ -32,7 +34,7 @@ function sendDataToBackend(profileIds){
   // Set up the request
   // https://email-template-generator.onrender.com/email-template-generator/form-data
   // http://localhost:3000/email-template-generator/form-data
-  xhr.open('POST', 'https://email-template-generator.onrender.com/email-template-generator/form-data', true);
+  xhr.open('POST', '/email-template-generator/form-data', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
 
   xhr.onload = function() {
@@ -45,10 +47,14 @@ function sendDataToBackend(profileIds){
       code_holder.innerHTML = xhr.responseText;
       code_holder.style.display = 'block';
       copyButton.style.display = 'block';
+      const generateButton = document.getElementById('generate_button');
+      generateButton.innerText = 'Generate';
       copyCode();
     } else {
       // Error response
       console.error('API request failed');
+      const generateButton = document.getElementById('generate_button');
+      generateButton.innerText = 'Generate';
       alert("Failed try again - if persists Report")
     }
   };
